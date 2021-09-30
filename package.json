@@ -1,0 +1,46 @@
+{
+  "name": "cljs-vercel",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "tsc",
+    "build": "tsc",
+    "start": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "dmvinson",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^14.17.5",
+    "@types/tar": "^4.0.5",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@typescript-eslint/parser": "^4.31.2",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "husky": "^7.0.1",
+    "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1",
+    "shadow-cljs": "^2.15.2",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "peerDependencies": {
+    "@vercel/build-utils": "^2.11.1"
+  },
+  "dependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@vercel/node-bridge": "^2.1.0",
+    "edn-data": "^0.2.0",
+    "execa": "^4.1.0",
+    "fs-extra": "^10.0.0",
+    "node-fetch": "^3.0.0",
+    "tar": "^6.1.11"
+  }
+}

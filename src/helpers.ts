@@ -6,7 +6,7 @@ import { parseEDNString } from 'edn-data';
 
 export const javaVersion = '17.0.0.35.1';
 const javaUrl = `https://corretto.aws/downloads/resources/${javaVersion}/amazon-corretto-${javaVersion}-linux-x64.tar.gz`;
-const shadowBuildTypes = ['browser', 'node-library'];
+const shadowBuildTypes = ['node-library'];
 
 export async function installJava() {
   const res = await fetch(javaUrl);

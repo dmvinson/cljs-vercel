@@ -19,6 +19,7 @@ type ShadowBuildConfig = {
   outputTo: string;
 };
 
+/*
 async function buildStaticConfig(
   config: ShadowBuildConfig,
   workPath: string,
@@ -27,8 +28,9 @@ async function buildStaticConfig(
   const files = await glob(path.join(outputPath, '**'), workPath);
   return files;
 }
+*/
 
-async function buildLambdaConfig(
+export default async function buildLambdaFromConfig(
   config: ShadowBuildConfig,
   workPath: string,
 ): Promise<Lambda> {
@@ -48,18 +50,4 @@ async function buildLambdaConfig(
     handler: 'launcher.launcher',
     runtime: 'nodejs14.x',
   });
-}
-
-export default async function buildConfig(
-  config: ShadowBuildConfig,
-  workPath: string,
-): Promise<Lambda | Files> {
-  switch (config.target) {
-    case 'browser':
-      return buildStaticConfig(config, workPath);
-    case 'node-library':
-      return buildLambdaConfig(config, workPath);
-    default:
-      throw new Error(`Unknown build target type: ${config.target}`);
-  }
 }

@@ -9,7 +9,7 @@ import {
   javaVersion,
 } from './helpers';
 
-export const versionn = 3;
+export const version = 3;
 
 export async function build({
   files,
